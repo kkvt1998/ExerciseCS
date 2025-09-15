@@ -1,12 +1,37 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\quakh\\CS\\ExerciseCS\\Design Menu Aplication\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{BCC55A7F-2A01-4F2E-ADE8-7BBBCB7A1FA3}|Design Menu Aplication\\Design Menu Aplication.csproj|c:\\users\\quakh\\cs\\exercisecs\\design menu aplication\\design menu aplication\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BCC55A7F-2A01-4F2E-ADE8-7BBBCB7A1FA3}|Design Menu Aplication\\Design Menu Aplication.csproj|solutionrelative:design menu aplication\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\quakh\\CS\\ExerciseCS\\Design Menu Aplication\\Design Menu Aplication\\Program.cs",
+              "RelativeDocumentMoniker": "Design Menu Aplication\\Program.cs",
+              "ToolTip": "C:\\Users\\quakh\\CS\\ExerciseCS\\Design Menu Aplication\\Design Menu Aplication\\Program.cs",
+              "RelativeToolTip": "Design Menu Aplication\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-15T15:10:11.765Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }
