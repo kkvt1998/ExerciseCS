@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\quakh\\CS\\ExerciseCS\\primeNumberTesting\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{4D92104D-A613-4581-A09D-44368F5AB6A9}|primeNumberTesting\\primeNumberTesting.csproj|c:\\users\\quakh\\cs\\exercisecs\\primenumbertesting\\primenumbertesting\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D92104D-A613-4581-A09D-44368F5AB6A9}|primeNumberTesting\\primeNumberTesting.csproj|solutionrelative:primenumbertesting\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\quakh\\CS\\ExerciseCS\\primeNumberTesting\\primeNumberTesting\\Program.cs",
+              "RelativeDocumentMoniker": "primeNumberTesting\\Program.cs",
+              "ToolTip": "C:\\Users\\quakh\\CS\\ExerciseCS\\primeNumberTesting\\primeNumberTesting\\Program.cs",
+              "RelativeToolTip": "primeNumberTesting\\Program.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAiwCAAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-17T13:48:41.975Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
