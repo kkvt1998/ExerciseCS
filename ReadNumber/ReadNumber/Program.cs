@@ -4,210 +4,186 @@ namespace ReadNumber
 {
     class Program
     {
-        static void Main(string[] args)
+        public static string units(int unit)
         {
-            Console.WriteLine("Program: Read your number");
-            Console.WriteLine("Enter your number: ");
-            int num;
-            num = Int32.Parse(Console.ReadLine());
-            Console.WriteLine("Your number is: " + num);
-            if( 0 <= num && num < 1000)
+            string resultUnit = " ";
+            switch (unit)
             {
-                //declare variables
-                int hundreds, tens, units;
-                string strHundreds = "", strTens = "", strUnits = "";
-                // caculate hundreds
-                hundreds = num / 100;
-                switch (hundreds)
+                case 1:
+                    resultUnit = "one";
+                    break;
+                case 2:
+                    resultUnit = "two";
+                    break;
+                case 3:
+                    resultUnit = "three";
+                    break;
+                case 4:
+                    resultUnit = "four";
+                    break;
+                case 5:
+                    resultUnit = "five";
+                    break;
+                case 6:
+                    resultUnit = "six";
+                    break;
+                case 7:
+                    resultUnit = "seven";
+                    break;
+                case 8:
+                    resultUnit = "eight";
+                    break;
+                case 9:
+                    resultUnit = "nine";
+                    break;
+                default:
+                    resultUnit = "";
+                    break;
+            }
+            return resultUnit;
+        }
+        public static string tens(int ten, int unit)
+        {
+            string resultTens = "";
+            if (ten == 0)
+            {
+                units(unit);
+            }
+            else if (ten == 1)
+            {
+                switch (unit)
                 {
+                    case 0:
+                        resultTens = "ten";
+                        break;
                     case 1:
-                        strHundreds = "One hundred";
+                        resultTens = "eleven";
                         break;
                     case 2:
-                        strHundreds = "Two hundred";
+                        resultTens = "twelve";
                         break;
                     case 3:
-                        strHundreds = "Three hundred";
+                        resultTens = "thirteen";
                         break;
                     case 4:
-                        strHundreds = "Four hundred";
+                        resultTens = "forteen";
                         break;
                     case 5:
-                        strHundreds = "Five hundred";
+                        resultTens = "fifteen";
                         break;
                     case 6:
-                        strHundreds = "Six hundred";
+                        resultTens = "sixteen";
                         break;
                     case 7:
-                        strHundreds = "Seven hundred";
+                        resultTens = "seventeen";
                         break;
                     case 8:
-                        strHundreds = "Eight hundred";
+                        resultTens = "eightteen";
                         break;
                     case 9:
-                        strHundreds = "Nine hundred";
+                        resultTens = "nineteen";
                         break;
                     default:
-                        strHundreds = "";
+                        resultTens = "";
                         break;
                 }
-                tens = (num % 100) / 10; 
-                units = (num % 100) % 10;
-                if (tens == 0)
-                {
-                    switch (units)
-                    {
-                        case 1:
-                            strUnits = "One";
-                            break;
-                        case 2:
-                            strUnits = "Two";
-                            break;
-                        case 3:
-                            strUnits = "Three";
-                            break;
-                        case 4:
-                            strUnits = "Four";
-                            break;
-                        case 5:
-                            strUnits = "Five";
-                            break;
-                        case 6:
-                            strUnits = "Six";
-                            break;
-                        case 7:
-                            strUnits = "Seven";
-                            break;
-                        case 8:
-                            strUnits = "Eight";
-                            break;
-                        case 9:
-                            strUnits = "Nine";
-                            break;
-                        default:
-                            strUnits = "";
-                            break;
-                    }
-                    strTens = "";
-                }
-                else if(tens == 1)
-                {
-                    strUnits = "";
-                    switch (tens)
-                    {
-                        case 10:
-                            strTens = "Ten";
-                            break;
-                        case 11:
-                            strTens = "Eleven";
-                            break;
-                        case 12:
-                            strTens = "Twelve";
-                            break;
-                        case 13:
-                            strTens = "Thirteen";
-                            break;
-                        case 14:
-                            strTens = "Fourteen";
-                            break;
-                        case 15:
-                            strTens = "Fifteen";
-                            break;
-                        case 16:
-                            strTens = "Sixteen";
-                            break;
-                        case 17:
-                            strTens = "Seventeen";
-                            break;
-                        case 18:
-                            strTens = "Eighteen";
-                            break;
-                        case 19:
-                            strTens = "Nineteen";
-                            break;
-                        default:
-                            strTens = "";
-                            break;
-
-                    }
-                }
-                else if(tens > 1) {
-                    switch (tens)
-                    {
-                        case 2:
-                            strTens = "Twenty";
-                            break;
-                        case 3:
-                            strTens = "Thirty";
-                            break;
-                        case 4:
-                            strTens = "Forty";
-                            break;
-                        case 5:
-                            strTens = "Fifty";
-                            break;
-                        case 6:
-                            strTens = "Sixty";
-                            break;
-                        case 7:
-                            strTens = "Seventy";
-                            break;
-                        case 8:
-                            strTens = "Eighty";
-                            break;
-                        case 9:
-                            strTens = "Ninety";
-                            break;
-                        default:
-                            strTens = "";
-                            break;
-                    }
-                    switch (units)
-                    {
-                        case 1:
-                            strUnits = "One";
-                            break;
-                        case 2:
-                            strUnits = "Two";
-                            break;
-                        case 3:
-                            strUnits = "Three";
-                            break;
-                        case 4:
-                            strUnits = "Four";
-                            break;
-                        case 5:
-                            strUnits = "Five";
-                            break;
-                        case 6:
-                            strUnits = "Six";
-                            break;
-                        case 7:
-                            strUnits = "Seven";
-                            break;
-                        case 8:
-                            strUnits = "Eight";
-                            break;
-                        case 9:
-                            strUnits = "Nine";
-                            break;
-                        default:
-                            strUnits = "";
-                            break;
-                    }
-                }
-                Console.WriteLine("Hundreds: " + strHundreds);
-                Console.WriteLine("Tens: " + strTens);
-                Console.WriteLine("Units: " + strUnits);
-
-                string result = strHundreds + " and " + strTens + " " + strUnits;
-                Console.WriteLine("Your number is read: " + result);
             }
             else
             {
-                Console.WriteLine("Your number is out of range 0 - 999");
+                switch (ten)
+                {
+                    case 2:
+                        resultTens = "twenty";
+                        break;
+                    case 3:
+                        resultTens = "thirty";
+                        break;
+                    case 4:
+                        resultTens = "forty";
+                        break;
+                    case 5:
+                        resultTens = "fifty";
+                        break;
+                    case 6:
+                        resultTens = "sixty";
+                        break;
+                    case 7:
+                        resultTens = "seventy";
+                        break;
+                    case 8:
+                        resultTens = "eightty";
+                        break;
+                    case 9:
+                        resultTens = "ninety";
+                        break;
+                    default:
+                        resultTens = "";
+                        break;
+                }
             }
-
+            return resultTens;
         }
-    }
+        public static string hundreds(int hundred)
+        {
+            string resultHundred = "";
+            if (hundred != 0)
+            {
+                resultHundred = units(hundred) + " hundred";
+            }
+            return resultHundred;   
+        }
+        public static int in_put()
+        {
+            bool check = false;
+            string x = "";
+            int result = 0;
+            while (!check)
+            { 
+                x = Console.ReadLine();
+                if(int.TryParse(x, out result))
+                {
+                    check = true;
+                }
+                else
+                {
+                    Console.WriteLine("Input invalid, please re-enter");
+                }
+            }
+            return result;
+        }
+         static void Main(string[] args)
+            {
+                Console.WriteLine("Program: Read your number");
+                Console.WriteLine("Enter your number: ");
+                int num = in_put();
+                Console.WriteLine("Your number is: " + num);
+                if (0 <= num && num < 1000)
+                {
+                    //declare variables
+                    string strHundreds = "", strTens = "", strUnits = "";
+                // caculate hundreds
+                    int hundred = num / 100,
+                        ten = (num % 100)/10,
+                        unit = (num % 100) % 10;
+
+      
+                    strHundreds = hundreds(hundred);
+                    strTens = tens(ten, unit);
+                    strUnits = units(unit);
+                    if(ten == 1)
+                    {
+                    Console.WriteLine(strHundreds + " and " + strTens);
+                    }
+                    else
+                    {
+                    Console.WriteLine(strHundreds + " and " + strTens + " " + strUnits);
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Your number is out of range 0 - 999");
+                }
+
+            }
+        }
 }
