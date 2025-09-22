@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\quakh\\CS\\ExerciseCS\\squareMatrix\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{ED9F1662-8346-4FF2-AAD7-9DC298B283D9}|squareMatrix\\squareMatrix.csproj|c:\\users\\quakh\\cs\\exercisecs\\squarematrix\\squarematrix\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ED9F1662-8346-4FF2-AAD7-9DC298B283D9}|squareMatrix\\squareMatrix.csproj|solutionrelative:squarematrix\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\quakh\\CS\\ExerciseCS\\squareMatrix\\squareMatrix\\Program.cs",
+              "RelativeDocumentMoniker": "squareMatrix\\Program.cs",
+              "ToolTip": "C:\\Users\\quakh\\CS\\ExerciseCS\\squareMatrix\\squareMatrix\\Program.cs",
+              "RelativeToolTip": "squareMatrix\\Program.cs",
+              "ViewState": "AgIAACkAAAAAAAAAAAAwwEUAAABgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-22T15:09:42.965Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
