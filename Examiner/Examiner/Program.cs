@@ -151,7 +151,7 @@ class Program{
         bool access = false;
         while (!access)
         {
-            Console.WriteLine("Nhap ten Sinh vien: ");
+            Console.WriteLine("Nhap ten Sinh vien (hoac nhap 'end' de dung)");
             string nameSV = Console.ReadLine();
             if (nameSV == "")
             {
@@ -243,43 +243,113 @@ class Program{
     {
         public string Name;
         public string Id;
-        public int Score;
+        public double Score;
 
-        public Student()
+        public Student(string id, string name, double score)
         {
-            
+            Name = name;
+            Id = id;
+            Score = score;
         }
         public void Display()
         {
-            Console.WriteLine(" Sinh vien " + Name + " co " + Id + " dat duoc " + Score);
+            Console.WriteLine($"ID: {Id} , Name: {Name}, Score: {Score}");
         }
     }
+    
     public static void classStudent()
     {
         Console.WriteLine("Program: Tao lop Student");
         List<Student> students = new List<Student>();
+        
+
         bool access = false;
         while (!access)
         {
             Console.WriteLine("Menu");
             Console.WriteLine("1. Them sinh vien");
-            Console.WriteLine("2. In ra danh sach sinh vien ");
-            Console.WriteLine("3. Exit");
+            Console.WriteLine("2. Tim kiem sinh vien ");
+            Console.WriteLine("3. Sinh vien co diem cao nhat ");
+            Console.WriteLine("4. Sinh vien co diem >= 8 ");
+            Console.WriteLine("5. Exit");
             int x = in_put_int();
-            if(x == 3)
+            if(x == 5)
             {
                 access = true;
             }
             else if (x == 1)
+            { 
+                int numList = students.Count;
+                if (numList < 3) {
+                    Console.WriteLine("Vui long nhap it nhat thong tin 3 sinh vien");
+                    for(int i = 0; i < 3; i++)
+                    {
+                        Console.WriteLine("Nhap ma sinh vien");
+                        string id_SV = Console.ReadLine();
+                        Console.WriteLine("Nhap ten sinh vien");
+                        string name_SV = Console.ReadLine();
+                        Console.WriteLine("Nhap diem sinh vien");
+                        double diem_SV = in_put_double();
+                        Student student_new = new Student(id_SV, name_SV, diem_SV);
+                        students.Add(student_new);
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Nhap ma sinh vien");
+                    string id_SV = Console.ReadLine();
+                    Console.WriteLine("Nhap ten sinh vien");
+                    string name_SV = Console.ReadLine();
+                    Console.WriteLine("Nhap diem sinh vien");
+                    double diem_SV = in_put_double();
+                    Student student_new = new Student(id_SV, name_SV, diem_SV);
+                    students.Add(student_new);
+                }
+                Console.WriteLine("Danh sach sinh vien");
+                foreach (var s in students)
+                {
+                    s.Display();
+                }
+                
+            } else if(x == 3)
             {
-                Student student_new = new Student();
-                Console.WriteLine("Nhap ten sinh vien");
-                student_new.Name = Console.ReadLine();
-                Console.WriteLine("Nhap Id sinh vien");
-                student_new.Id = Console.ReadLine();
-                Console.WriteLine("Nhap diem sinh vien");
-                student_new.Score = in_put_int();
-                student_new.Display();
+                double max_score = 0;
+                string Sv_maxscore = "";
+                for (int i = 0; i < students.Count; i++) { 
+                    if(max_score < students[i].Score)
+                    {
+                        max_score = students[i].Score;
+                        Sv_maxscore = students[i].Name;
+                    }
+                }
+                Console.WriteLine($"Sinh vien " + Sv_maxscore + " co diem so cao nhat la " + max_score);
+            }
+            else if (x == 4)
+            {
+                Console.WriteLine("Sinh vien co diem >= 8");
+                for (int i = 0; i < students.Count; i++)
+                {
+                    if (students[i].Score >= 8)
+                    {
+                        var goodStudent = students[i];
+                        goodStudent.Display();
+                    }
+                }
+            }
+            else if(x == 2)
+            {
+                Console.WriteLine("Nhap ten sinh vien ban muon tim");
+                string nameSV_search = Console.ReadLine();
+         
+                for (int i = 0; i < students.Count; i++)
+                {
+                    if (nameSV_search.ToUpper().Contains(students[i].Name.ToUpper()))
+                    {
+                        var resultStudent = students[i];
+                        resultStudent.Display();
+                    }
+                }
+                
             }
         }
         
@@ -296,8 +366,8 @@ class Program{
         //ListSV();
         //Exercise 4:
         //DictionarySV();
-        //Exercise 5:
-        classStudent();
+        //Exercise 5, 6:
+        //classStudent();
 
 
 
