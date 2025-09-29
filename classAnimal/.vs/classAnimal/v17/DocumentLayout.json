@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\quakh\\CS\\ExerciseCS\\classAnimal\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A1A4B279-8FD4-49EC-97DE-9A62AD987AE1}|classAnimal\\classAnimal.csproj|c:\\users\\quakh\\cs\\exercisecs\\classanimal\\classanimal\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A1A4B279-8FD4-49EC-97DE-9A62AD987AE1}|classAnimal\\classAnimal.csproj|solutionrelative:classanimal\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\quakh\\CS\\ExerciseCS\\classAnimal\\classAnimal\\Program.cs",
+              "RelativeDocumentMoniker": "classAnimal\\Program.cs",
+              "ToolTip": "C:\\Users\\quakh\\CS\\ExerciseCS\\classAnimal\\classAnimal\\Program.cs",
+              "RelativeToolTip": "classAnimal\\Program.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAIwCMAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-29T14:55:18.02Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
