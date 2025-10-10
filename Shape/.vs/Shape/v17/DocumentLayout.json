@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\quakh\\CS\\ExerciseCS\\Shape\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{625FF663-B0EA-4861-9031-93E3F84757A0}|Shape\\Shape.csproj|c:\\users\\quakh\\cs\\exercisecs\\shape\\shape\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{625FF663-B0EA-4861-9031-93E3F84757A0}|Shape\\Shape.csproj|solutionrelative:shape\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\quakh\\CS\\ExerciseCS\\Shape\\Shape\\Program.cs",
+              "RelativeDocumentMoniker": "Shape\\Program.cs",
+              "ToolTip": "C:\\Users\\quakh\\CS\\ExerciseCS\\Shape\\Shape\\Program.cs",
+              "RelativeToolTip": "Shape\\Program.cs",
+              "ViewState": "AgIAALgAAAAAAAAAAAAYwNEAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-10T13:02:34.657Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
