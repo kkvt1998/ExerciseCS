@@ -213,15 +213,3 @@ class Program
         game.RunGame();
     }
 }
-
-//pipes là danh sách các ống.
-
-//Mỗi frame:
-
-//Ống di chuyển sang trái (x - 1).
-
-//Nếu ống đi hết màn hình (x < -1), ta xóa nó và thêm một ống mới vào cuối.
-
-//gapY là vị trí bắt đầu lỗ hổng.
-
-//gapSize là chiều cao khoảng trống để chim bay qua.
