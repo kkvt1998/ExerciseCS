@@ -27,7 +27,7 @@ class Game
         //Cai dat kich thuoc cua so de hien thi ban do
         Console.SetWindowSize(GameWidth, GameHeight + 1);
         Console.CursorVisible = false;// Hide Cursor
-        //Ve vien xung quanh ban do
+        
         // Tạo 3 ống ban đầu
         for (int i = 0; i < 3; i++)
         {
@@ -37,6 +37,7 @@ class Game
             int blank = rand.Next(2, GameHeight - spaceSize);
             pipes.Add((pipeX, blank));
         }
+        // Set các ký tự trong bản đồ
         for (int i = 0; i < GameWidth; i++)
         {
             for (int j = 1; j < GameHeight; j++)
@@ -53,7 +54,7 @@ class Game
             }
         }
     }
-    //Ham thuc thi viec ve cac doi tuong trong ban do
+    //Hàm thực thi để hiển thị bản đồ và các thành phần của trò chơi
     public void DrawGame()
     {
         for (int i = 0; i < GameWidth; i++)
@@ -80,6 +81,7 @@ class Game
                 Console.Write(map[i, j]);
             }
         }
+        // Vẽ các chướng ngại vật (ống)
         foreach (var pipe in pipes)
         {
             for (int j = 2; j < GameHeight - 1; j++)
@@ -98,8 +100,8 @@ class Game
         }
         Console.ResetColor();
     }
-    
-    //Ham thuc hien viec vong lap Game
+
+    //Hàm thực hiện vòng lặp chính của trò chơi
     public void GameLoop()
     {
         while(!isGameExit == true) 
@@ -131,6 +133,7 @@ class Game
                         }
                         else
                         {
+                            //Tăng điểm số khi vượt qua chướng ngại vật
                             Score++;
                         }
                     }
@@ -156,7 +159,7 @@ class Game
 
         }
     }
-    //Ham thuc thi lenh tu ban phim
+    //Hàm thực thi khi người chơi nhấn phím
     public void handleInput(ConsoleKeyInfo key)
     {
         int newY = playerY;
@@ -171,7 +174,7 @@ class Game
             playerY = newY;
         }
     }
-    // Hàm Restart Game
+    // Hàm Restart Game khi trò chơi kết thúc
     public void RestartGame()
     {
         if (Console.KeyAvailable)
