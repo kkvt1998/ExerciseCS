@@ -1,16 +1,20 @@
 ﻿using System;
+using System.Text;
 
 class Game
 {
+
+    StringBuilder stringBuilder = new StringBuilder();
+    StringBuilder stringBuilder1 = new StringBuilder();
     //kich thuoc ban do game
     const int GameWidth = 50;
-    const int GameHeight = 25;
+    const int GameHeight = 20;
     //tao mang 2D de ve ban do
     char[,] map = new char[GameWidth, GameHeight];
     // vi tri cua nguoi choi
     int playerX = 5;
     int playerY = 5;
-    // vi tri chuong ngai vat
+    // thuoc tinh chuong ngai vat
     int spaceSize = 6;
     int pipeSpacing = 15;
     List <(int pipeX, int blank)> pipes = new List <(int, int)>();
@@ -65,8 +69,11 @@ class Game
                 if(i == 0 && j == 0)
                 {
                     Console.ForegroundColor = ConsoleColor.Cyan;
-                    Console.Write("Score: " + Score);
-                    continue;
+                    stringBuilder.Append("Score: ");
+                    stringBuilder.Append(Score);
+                    Console.Write(stringBuilder.ToString());
+                    stringBuilder.Clear();
+                    //Console.Write("Score: " + Score);
                 }
                 if (map[i, j] == '#')
                 {
@@ -75,13 +82,17 @@ class Game
                 else if( i == playerX && j == playerY)
                 {
                     Console.ForegroundColor = ConsoleColor.Green;
-                    Console.Write('@');
+                    stringBuilder.Append('@');
+                    Console.Write(stringBuilder.ToString());
+                    stringBuilder.Clear();
+                    //Console.Write('@');
+
                 }
                 
                 Console.Write(map[i, j]);
             }
         }
-        // Vẽ các chướng ngại vật (ống)
+        //Vẽ các chướng ngại vật(ống)
         foreach (var pipe in pipes)
         {
             for (int j = 2; j < GameHeight - 1; j++)
@@ -92,63 +103,65 @@ class Game
                     if (pipe.pipeX > 0 && pipe.pipeX < GameWidth)
                     {
                         Console.SetCursorPosition(pipe.pipeX, j);
-                        Console.ForegroundColor= ConsoleColor.Red;
-                        Console.Write("|");
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        stringBuilder.Append("|");
+                        Console.Write(stringBuilder.ToString());
+                        stringBuilder.Clear();
+
                     }
                 }
             }
         }
         Console.ResetColor();
     }
+    // Hàm thực thi controller pipes
+    public void controlPipes()
+    {
+        // Dịch trái vị trí các ống theo phương width
+        for (int i = 0; i < pipes.Count; i++)
+        {
+            pipes[i] = (pipes[i].pipeX - 1, pipes[i].blank);
+
+            if (pipes[i].pipeX == playerX)
+            {
+                // Kiểm tra va chạm với ống
+                if (playerY < pipes[i].blank || playerY > pipes[i].blank + spaceSize)
+                {
+                    isGameOver = true;
+                }
+                else
+                {
+                    //Tăng điểm số khi vượt qua chướng ngại vật
+                    Score++;
+                }
+            }
+            if(pipes[i].pipeX < -1)
+            {
+                pipes[i] = (GameWidth, rand.Next(2, GameHeight - spaceSize));
+            }
+        }
+    }
 
     //Hàm thực hiện vòng lặp chính của trò chơi
     public void GameLoop()
     {
-        while(!isGameExit == true) 
+        while(!isGameExit) 
         {
             while (!isGameOver)
             {
                 playerY++;
-                //Kiểm tra xem có nhấn phím hay không
-                if (Console.KeyAvailable)
-                {
-                    ConsoleKeyInfo key = Console.ReadKey(true);
-                    handleInput(key);
-                }
+
+                controlPipes();
+
+                DrawGame();
+
+                handleInput();
+
+                Thread.Sleep(100);
                 if (playerY == GameHeight - 1)
                 {
                     isGameOver = true;
                 }
-                // Dịch trái vị trí các ống theo phương width
-                for (int i = 0; i < pipes.Count; i++)
-                {
-                    pipes[i] = (pipes[i].pipeX - 1, pipes[i].blank);
-
-                    if (pipes[i].pipeX == playerX)
-                    {
-                        // Kiểm tra va chạm với ống
-                        if (playerY < pipes[i].blank || playerY > pipes[i].blank + spaceSize)
-                        {
-                            isGameOver = true;
-                        }
-                        else
-                        {
-                            //Tăng điểm số khi vượt qua chướng ngại vật
-                            Score++;
-                        }
-                    }
-                }
-
-                // Nếu ống đầu tiên ra khỏi màn hình -> thêm ống mới
-                if (pipes[0].pipeX < -1)
-                {
-                    pipes.RemoveAt(0);
-                    pipes.Add((GameWidth, rand.Next(2, GameHeight - spaceSize)));
-                }
-                DrawGame();
-
-
-                Thread.Sleep(100);
             }
             Console.Clear();
             Console.WriteLine("End Game");
@@ -160,27 +173,31 @@ class Game
         }
     }
     //Hàm thực thi khi người chơi nhấn phím
-    public void handleInput(ConsoleKeyInfo key)
+    public void handleInput()
     {
         int newY = playerY;
-        if (key.Key == ConsoleKey.UpArrow)
+        if (Console.KeyAvailable)
         {
-            newY = newY - 2;
+            ConsoleKeyInfo key = Console.ReadKey(true);
+            if (key.Key == ConsoleKey.UpArrow)
+            {
+                newY = newY - 2;
+            }
         }
-        
+
         // Kiểm tra va chạm (chỉ cho phép đi trong phạm vi "khoảng trống")
-        if(newY > 0)
+        if(newY > 1)
         {
             playerY = newY;
         }
     }
-    // Hàm Restart Game khi trò chơi kết thúc
+    //Hàm Restart Game khi trò chơi kết thúc
     public void RestartGame()
     {
         if (Console.KeyAvailable)
         {
             ConsoleKeyInfo key = Console.ReadKey(true);
-            if(key.Key == ConsoleKey.Enter)
+            if (key.Key == ConsoleKey.Enter)
             {
                 // Reset các thuộc tính của trò chơi
                 playerX = 5;
@@ -192,7 +209,7 @@ class Game
                 Console.Clear();
                 GameLoop();
             }
-            else if(key.Key == ConsoleKey.Escape)
+            else if (key.Key == ConsoleKey.Escape)
             {
                 isGameExit = true;
             }
