@@ -60,7 +60,7 @@ class baitap
     //Hàm sắp xếp danh sách
     static void sortingList(List<int> x) 
     {
-        for(int i = 0; i < x.Count - 1; i++) 
+        for(int i = 0; i < x.Count ; i++) 
         {
             for (int j = i + 1; j < x.Count; j++) 
             {
